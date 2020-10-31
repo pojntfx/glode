@@ -1,15 +1,7 @@
-export interface INetworkInterface {
-  open(): void;
+import { IIPFSConsumer, IPFSConsumer } from "./ipfs-consumer";
 
-  close(): void;
-}
+export interface INetworkInterface extends IIPFSConsumer {}
 
-export class NetworkInterface implements INetworkInterface {
-  open(): void {
-    throw new Error("Method not implemented.");
-  }
-
-  close(): void {
-    throw new Error("Method not implemented.");
-  }
-}
+export class NetworkInterface
+  extends IPFSConsumer
+  implements INetworkInterface {}

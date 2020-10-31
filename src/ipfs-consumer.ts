@@ -1,13 +1,13 @@
 import IPFS from "ipfs";
 
-export interface IDisk {
+export interface IIPFSConsumer {
   open(): Promise<void>;
 
   close(): Promise<void>;
 }
 
-export class Disk implements IDisk {
-  private ipfs?: Awaited<ReturnType<typeof IPFS["create"]>>;
+export class IPFSConsumer implements IIPFSConsumer {
+  protected ipfs?: Awaited<ReturnType<typeof IPFS["create"]>>;
 
   constructor(private repo: string) {}
 
@@ -18,8 +18,6 @@ export class Disk implements IDisk {
   }
 
   async close() {
-    await this.ipfs?.stop({
-      timeout: 1000,
-    });
+    await this.ipfs?.stop({});
   }
 }
