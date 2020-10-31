@@ -1,15 +1,25 @@
-export interface IDisk {
-  open(): void;
+import IPFS from "ipfs";
 
-  close(): void;
+export interface IDisk {
+  open(): Promise<void>;
+
+  close(): Promise<void>;
 }
 
 export class Disk implements IDisk {
-  open(): void {
-    throw new Error("Method not implemented.");
+  private ipfs?: Awaited<ReturnType<typeof IPFS["create"]>>;
+
+  constructor(private repo: string) {}
+
+  async open() {
+    this.ipfs = await IPFS.create({
+      repo: this.repo,
+    });
   }
 
-  close(): void {
-    throw new Error("Method not implemented.");
+  async close() {
+    await this.ipfs?.stop({
+      timeout: 1000,
+    });
   }
 }
