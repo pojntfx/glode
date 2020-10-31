@@ -11,7 +11,7 @@ describe("FileSystem", () => {
     fileSystem = new FileSystem(repoName);
 
     await fileSystem.open();
-  });
+  }, 10000);
 
   it("should not be null", async () => {
     const fs = await fileSystem.getFileSystem();
@@ -36,7 +36,7 @@ describe("FileSystem lifecycle", () => {
 
   it("should open", async () => {
     await fileSystem.open();
-  });
+  }, 10000);
 
   afterEach(async () => {
     await fileSystem.close();
