@@ -4,7 +4,7 @@
   "description": "Compute, Network and Storage Node based on WASM, libp2p and IPFS.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/pojntfx/glode/issues"
   },
-  "homepage": "https://github.com/pojntfx/glode#readme"
+  "homepage": "https://github.com/pojntfx/glode#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.1",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.5"
+  }
 }

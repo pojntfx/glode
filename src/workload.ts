@@ -1,4 +1,4 @@
-import { EPermission } from "./Permission";
+import { EPermission } from "./permission";
 
 export interface IWorkload {
   repo: string;
