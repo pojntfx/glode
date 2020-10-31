@@ -13,7 +13,7 @@ describe("NetworkInterface lifecycle", () => {
 
   it("should open", async () => {
     await networkInterface.open();
-  });
+  }, 10000);
 
   afterEach(async () => {
     await networkInterface.close();

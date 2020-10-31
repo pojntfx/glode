@@ -13,7 +13,7 @@ describe("IPFSConsumer lifecycle", () => {
 
   it("should open", async () => {
     await ipfsConsumer.open();
-  });
+  }, 10000);
 
   afterEach(async () => {
     await ipfsConsumer.close();
