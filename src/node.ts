@@ -1,3 +1,6 @@
+import { FileSystem } from "./file-system";
+import { NetworkInterface } from "./network-interface";
+import { VirtualMachine } from "./virtual-machine";
 import { IWorkload } from "./workload";
 
 export interface INode {
@@ -9,6 +12,10 @@ export interface INode {
 }
 
 export class Node implements INode {
+  private virtualMachine?: VirtualMachine;
+  private networkInterface?: NetworkInterface;
+  private fileSystem?: FileSystem;
+
   open(): void {
     throw new Error("Method not implemented.");
   }
